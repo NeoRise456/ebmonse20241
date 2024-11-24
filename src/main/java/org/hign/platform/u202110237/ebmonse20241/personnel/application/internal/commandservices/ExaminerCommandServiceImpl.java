@@ -5,7 +5,9 @@ import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.commands
 import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.valueobjects.NationalProviderIdentifier;
 import org.hign.platform.u202110237.ebmonse20241.personnel.domain.services.ExaminerCommandService;
 import org.hign.platform.u202110237.ebmonse20241.personnel.infrastructure.persistence.jpa.repositories.ExaminerRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ExaminerCommandServiceImpl implements ExaminerCommandService {
 
     private final ExaminerRepository examinerRepository;

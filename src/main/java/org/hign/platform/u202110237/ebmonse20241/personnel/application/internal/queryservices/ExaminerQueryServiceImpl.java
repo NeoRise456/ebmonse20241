@@ -4,9 +4,11 @@ import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.aggregat
 import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.queries.GetExaminerByIdQuery;
 import org.hign.platform.u202110237.ebmonse20241.personnel.domain.services.ExaminerQueryService;
 import org.hign.platform.u202110237.ebmonse20241.personnel.infrastructure.persistence.jpa.repositories.ExaminerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ExaminerQueryServiceImpl implements ExaminerQueryService {
 
     private final ExaminerRepository examinerRepository;
