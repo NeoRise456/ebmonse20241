@@ -15,6 +15,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller class for the Examiners
+ * @author Juan Astonitas
+ */
 @CrossOrigin(origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE })
 @RestController
 @RequestMapping(value = "/api/v1/examiners", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -23,11 +27,23 @@ public class ExaminersController {
     private final ExaminerQueryService examinerQueryService;
     private final ExaminerCommandService examinerCommandService;
 
+    /**
+     * Constructor for the ExaminersController
+     * @param examinerQueryService
+     * @param examinerCommandService
+     * @author Juan Astonitas
+     */
     public ExaminersController(ExaminerQueryService examinerQueryService, ExaminerCommandService examinerCommandService){
         this.examinerQueryService = examinerQueryService;
         this.examinerCommandService = examinerCommandService;
     }
 
+    /**
+     * Create a new examiner
+     * @param resource
+     * @return ExaminerResource
+     * @author Juan Astonitas
+     */
     @PostMapping
     @Operation(summary = "Create a new examiner" , description = "Create a new examiner in the system")
     @ApiResponse(responseCode = "201", description = "Examiner created")

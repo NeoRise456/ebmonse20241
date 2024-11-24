@@ -1,6 +1,10 @@
 package org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.valueobjects;
 
-
+/**
+ * NationalProviderIdentifier
+ * @param nationalProviderIdentifier
+ * @author Juan Astonitas
+ */
 public record NationalProviderIdentifier(String nationalProviderIdentifier) {
 
     public NationalProviderIdentifier {

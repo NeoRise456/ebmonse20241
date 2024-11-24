@@ -7,15 +7,30 @@ import org.hign.platform.u202110237.ebmonse20241.personnel.domain.services.Exami
 import org.hign.platform.u202110237.ebmonse20241.personnel.infrastructure.persistence.jpa.repositories.ExaminerRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementation of the ExaminerCommandService interface.
+ * @author Juan Astonitas
+ */
 @Service
 public class ExaminerCommandServiceImpl implements ExaminerCommandService {
 
     private final ExaminerRepository examinerRepository;
 
+    /**
+     * Constructor of the class.
+     * @param examinerRepository
+     * @author Juan Astonitas
+     */
     public ExaminerCommandServiceImpl(ExaminerRepository examinerRepository) {
         this.examinerRepository = examinerRepository;
     }
 
+    /**
+     * Method to handle the creation of an examiner.
+     * @param command
+     * @return the id of the created examiner
+     * @author Juan Astonitas
+     */
     @Override
     public Long handle(CreateExaminerCommand command) {
 
