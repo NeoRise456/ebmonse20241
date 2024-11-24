@@ -1,4 +1,4 @@
-package org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.valueobjects;
+package org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.valueobjects;
 
 
 public record NationalProviderIdentifier(String nationalProviderIdentifier) {

@@ -1,11 +1,12 @@
-package org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.aggregates;
+package org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.aggregates;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.valueobjects.NationalProviderIdentifier;
+import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.commands.CreateExaminerCommand;
+import org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.valueobjects.NationalProviderIdentifier;
 import org.hign.platform.u202110237.ebmonse20241.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
 @Entity
@@ -39,6 +40,12 @@ public class Examiner extends AuditableAbstractAggregateRoot<Examiner> {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationalProviderIdentifier = new NationalProviderIdentifier(nationalProviderIdentifier);
+    }
+
+    public Examiner(CreateExaminerCommand command){
+        this.firstName = command.firstName();
+        this.lastName = command.lastName();
+        this.nationalProviderIdentifier = new NationalProviderIdentifier(command.nationalProviderIdentifier());
     }
 
 }
