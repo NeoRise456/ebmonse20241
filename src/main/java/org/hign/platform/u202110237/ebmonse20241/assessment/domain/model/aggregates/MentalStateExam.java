@@ -72,6 +72,11 @@ public class MentalStateExam extends AuditableAbstractAggregateRoot<MentalStateE
     })
     private ExaminerNationalProviderIdentifier examinerNationalProviderIdentifier;
 
+    /**
+     * Constructor
+     * @param command
+     * @author Juan Astonitas
+     */
     public MentalStateExam(CreateMentalStateExamCommand command) {
         this.patientId = command.patientId();
         this.examDate = convertStringToDate(command.examDate());
@@ -83,6 +88,12 @@ public class MentalStateExam extends AuditableAbstractAggregateRoot<MentalStateE
         this.examinerNationalProviderIdentifier = new ExaminerNationalProviderIdentifier(command.examinerNationalProviderIdentifier());
     }
 
+    /**
+     * Convert string to date
+     * @param dateString
+     * @return Date
+     * @author Juan Astonitas
+     */
     public static Date convertStringToDate(String dateString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(dateString, formatter);
