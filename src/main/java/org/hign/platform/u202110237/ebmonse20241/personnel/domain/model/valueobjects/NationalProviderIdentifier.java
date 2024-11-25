@@ -1,10 +1,13 @@
 package org.hign.platform.u202110237.ebmonse20241.personnel.domain.model.valueobjects;
 
+import jakarta.persistence.Embeddable;
+
 /**
  * NationalProviderIdentifier
  * @param nationalProviderIdentifier
  * @author Juan Astonitas
  */
+@Embeddable
 public record NationalProviderIdentifier(String nationalProviderIdentifier) {
 
     public NationalProviderIdentifier {

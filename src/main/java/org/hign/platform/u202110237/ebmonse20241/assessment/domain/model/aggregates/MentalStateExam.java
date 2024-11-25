@@ -3,14 +3,12 @@ package org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.aggreg
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.commands.CreateMentalStateExamCommand;
 import org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.valueobjects.ExaminerNationalProviderIdentifier;
 import org.hign.platform.u202110237.ebmonse20241.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
-import org.springframework.data.domain.AbstractAggregateRoot;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -58,7 +56,7 @@ public class MentalStateExam extends AuditableAbstractAggregateRoot<MentalStateE
     @Max(9)
     private Integer languageScore;
 
-    //TODO: do one-to-many relationship with the mental state exam (nationalProviderIdentifier)
+
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "examinerNationalProviderIdentifier",
@@ -70,6 +68,9 @@ public class MentalStateExam extends AuditableAbstractAggregateRoot<MentalStateE
             )
     })
     private ExaminerNationalProviderIdentifier examinerNationalProviderIdentifier;
+
+
+
 
     /**
      * Constructor

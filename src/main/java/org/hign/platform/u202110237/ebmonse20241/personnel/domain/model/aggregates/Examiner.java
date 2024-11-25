@@ -32,7 +32,7 @@ public class Examiner extends AuditableAbstractAggregateRoot<Examiner> {
     @AttributeOverrides({
             @AttributeOverride(name = "nationalProviderIdentifier",
                     column = @Column(
-                            name = "examiner_national_provider_identifier",
+                            name = "national_provider_identifier",
                             length = 36 ,
                             nullable = false
                     )

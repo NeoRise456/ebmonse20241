@@ -1,10 +1,13 @@
 package org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.valueobjects;
 
+import jakarta.persistence.Embeddable;
+
 /**
  * Examiner National Provider Identifier
  * @param examinerNationalProviderIdentifier
  * @author Juan Astonitas
  */
+@Embeddable
 public record ExaminerNationalProviderIdentifier(String examinerNationalProviderIdentifier) {
 
     public ExaminerNationalProviderIdentifier {
@@ -17,6 +20,5 @@ public record ExaminerNationalProviderIdentifier(String examinerNationalProvider
         if (!examinerNationalProviderIdentifier.matches("[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}")) {
             throw new IllegalArgumentException("Examiner National Provider Identifier must be a valid UUID");
         }
-
     }
 }
