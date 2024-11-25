@@ -26,12 +26,11 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 public class MentalStateExam extends AuditableAbstractAggregateRoot<MentalStateExam> {
+
     @NotNull
-    @NotBlank
     private Long patientId;
 
     @NotNull
-    @NotBlank
     private Date examDate;
 
     @NotNull
