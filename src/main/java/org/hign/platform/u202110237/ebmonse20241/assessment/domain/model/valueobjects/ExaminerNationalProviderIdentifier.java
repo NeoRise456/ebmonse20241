@@ -1,5 +1,10 @@
 package org.hign.platform.u202110237.ebmonse20241.assessment.domain.model.valueobjects;
 
+/**
+ * Examiner National Provider Identifier
+ * @param examinerNationalProviderIdentifier
+ * @author Juan Astonitas
+ */
 public record ExaminerNationalProviderIdentifier(String examinerNationalProviderIdentifier) {
 
     public ExaminerNationalProviderIdentifier {
